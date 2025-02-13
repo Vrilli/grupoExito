@@ -1,0 +1,58 @@
+<div *ngIf="loading">Cargando...</div>
+<div *ngIf="!loading">
+    <div *ngFor="let tarjeta of tarjetas" class="container">
+        <div class="nav">
+            <button [routerLink]="'/tarjetas/lote'">Lote</button>
+            <button [routerLink]="'/movements/' + tarjeta.id" class="buttonVerMov">Movimientos</button>
+            <button (click)="cerrarSesion()">Cerrar sesión</button>
+        </div>
+
+    </div>
+    <form (ngSubmit)="nuevaTarjeta()" #tarjetaForm="ngForm" class="container-form">
+        <h1>Agregar Nueva Tarjeta</h1>
+        <div class="form-group">
+            <label>Nombre de la empresa:</label>
+            <input type="text" [(ngModel)]="nueva.company" name="company" required #company="ngModel"
+                placeholder="Ej: Amazon">
+            <p *ngIf="company.invalid && company.touched">Este campo es obligatorio.</p>
+        </div>
+        <div class="form-group">
+            <label>Monto a recargar:</label>
+            <input type="number" [(ngModel)]="nueva.amount" name="amount" required #amount="ngModel"
+                placeholder="Ej: 50000">
+            <p *ngIf="amount.invalid && amount.touched">Este campo es obligatorio.</p>
+        </div>
+        <div class="form-group">
+            <label>Url de la imagen:</label>
+            <input type="text" [(ngModel)]="nueva.imageUrl" name="imageUrl" required #imageUrl="ngModel"
+                placeholder="Ej: https://example.com/image.jpg">
+            <p *ngIf="imageUrl.invalid && imageUrl.touched">Este campo es obligatorio.</p>
+        </div>
+
+        <button type="submit" [disabled]="tarjetaForm.invalid">
+            Agregar Tarjeta
+        </button>
+    </form>
+
+    <!-- Lista de tarjetas -->
+    <div class="container">
+        <h1 class="tittle">Listado de Tarjetas</h1>
+        <div class="gift-card-container">
+            <div *ngFor="let tarjeta of tarjetas; let i = index" class="gift-card">
+                <div class="gift-card-header">
+                    <h2>GIFT CARD</h2>
+                    <span class="gift-card-amount">$ {{ tarjeta.amount | number }} COP</span>
+                </div>
+                <p class="company-name">{{ tarjeta.company }}</p>
+                <div class="gift-card-content">
+                    <img [src]="tarjeta.imageUrl" alt="GiftCardImage" class="gift-icon">
+                </div>
+                <div class="gift-card-actions">
+                    <button (click)="editarTarjeta(i)" class="buttonEdit">Editar</button>
+                    <button (click)="eliminarTarjeta(i)" class="buttonEli">Eliminar</button>
+                    <button (click)="gastarSaldo(i)" class="buttonGastar">Gastar Saldo</button>
+                </div>
+
+            </div>
+        </div>
+    </div>

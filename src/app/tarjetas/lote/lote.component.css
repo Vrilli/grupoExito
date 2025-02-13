@@ -1,0 +1,162 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.nav {
+    display: flex;
+    position: fixed;
+    z-index: 1000;
+    top: 0;
+    right: 0;
+    left: 0;
+    padding: 20px;
+    background: #FFDD00;
+    justify-content: flex-end;
+    gap: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+button {
+    padding: 10px 20px;
+    font-size: medium;
+    border: none;
+    border-radius: 8px;
+    background: #FFDD00;
+    color: black;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.form {
+    display: flex;
+    gap: 20px;
+    border-radius: 10px;
+    padding: 20px;
+    width: 100%;
+    max-width: 600px;
+    margin-top: 80px;
+}
+
+.container-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 20px;
+    width: 100%;
+    max-width: 600px;
+    max-height: 80vh;
+    overflow-y: auto;
+    background: #F2F2F2;
+    border-radius: 10px;
+    position: absolute;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+h1 {
+    padding-top: 70px;
+    text-align: center;
+    color: #0C5156;
+    font-size: 3rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+h2 {
+    text-align: center;
+    color: #0C5156;
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    width: 100%;
+}
+
+label {
+    color: #0C5156;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+input {
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #0C5156;
+    width: 100%;
+    max-width: 300px;
+}
+
+.button-group {
+    display: flex;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    gap: 10px;
+    justify-content: center;
+}
+
+.form-group button {
+    align-self: flex-start;
+}
+
+.gift-card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    width: 100%;
+    padding: 20px;
+}
+
+/* Tarjetas */
+.container-list {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 450px;
+    margin-bottom: 80px;
+    width: 100%;
+}
+
+.tittle {
+    margin-top: 20px;
+    text-align: center;
+    color: #0C5156;
+    font-size: 3rem;
+    font-weight: bold;
+}
+
+.gift-card {
+    width: 350px;
+    background: linear-gradient(135deg, #F27329, #F29F05);
+    color: #fff;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.2);
+    margin-top: 20px;
+}
+
+.gift-card h3 {
+    color: black;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.gift-card img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-top: 10px;
+}

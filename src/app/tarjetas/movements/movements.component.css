@@ -1,0 +1,100 @@
+.nav {
+    display: flex;
+    position: fixed;
+    z-index: 1000;
+    top: 0;
+    right: 0;
+    left: 0;
+    padding: 20px;
+    background: #FFDD00;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-bottom: 40px;
+}
+
+.movements-container {
+    background-color: #F2F2F2;
+    max-width: 900px;
+    width: 90%;
+    padding: 60px;
+    margin: auto;
+    position: absolute;
+    top: 50%;  
+    left: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.15);
+    border-radius: 12px;
+    text-align: center;
+    font-size: 2rem;
+}
+
+.title {
+    font-size: 3rem;
+    color: #0C5156;
+    font-weight: bold;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: medium;
+    border: none;
+    border-radius: 8px;
+    background: #FFDD00;
+    color: black;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+
+.movements-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+
+.movement-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+    font-size: 25px;
+    color: #333;
+}
+
+.date {
+    color: #777;
+    font-size: 14px;
+}
+
+
+.description {
+    font-weight: 500;
+}
+
+
+.amount {
+    font-weight: bold;
+    color: #0C5156;
+}
+
+.btn-back {
+    padding: 10px 20px;
+    background-color: #0C5156;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.btn-back:hover {
+    background-color: #083d40;
+}
+
+.no-data-message {
+    text-align: center;
+    font-size: 18px;
+    color: #777;
+    margin-top: 20px;
+}

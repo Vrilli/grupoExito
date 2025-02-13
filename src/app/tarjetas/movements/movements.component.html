@@ -1,0 +1,21 @@
+<div class="nav">
+  <button [routerLink]="['/']" >Volver</button>
+  <button (click)="cerrarSesion()">Cerrar sesión</button>
+</div>
+<div class="movements-container" *ngIf="movimientos.length > 0; else noMovements">
+  <h2 class="title">Historial de movimientos</h2>
+
+  <ul class="movements-list">
+    <li *ngFor="let movimiento of movimientos" class="movement-item">
+      <span class="company"><strong>{{ movimiento.company }}</strong></span> -
+      <span class="date">{{ movimiento.date | date:'short' }}</span> -
+      <span class="description">{{ movimiento.description }}</span>:
+      <strong class="amount">${{ movimiento.amount | number:'1.2-2' }}</strong>
+    </li>
+  </ul>
+</div>
+
+<!-- Mensaje si no hay movimientos -->
+<ng-template #noMovements>
+  <p class="no-data-message">No hay movimientos registrados en ninguna tarjeta.</p>
+</ng-template>

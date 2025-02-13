@@ -1,0 +1,107 @@
+/* Estilos generales */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    max-width: 70vw;
+    margin: 0 auto;
+    margin-top: 30px;
+    height: 50vh;
+}
+
+/* Estilos para las columnas */
+.container-grid {
+    flex: 1;
+    padding: 10px;
+    background-color: #F2F2F2;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Ajustes para pantallas pequeñas */
+@media (max-width: 768px) {
+    .container-grid {
+        flex: 100%;
+        max-width: 100%;
+    }
+}
+
+/* Estilos específicos del formulario */
+form {
+    padding: 40px 40px;
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    font-size: 1.5em;
+    margin-bottom: 5px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="number"],
+input[type="password"],
+select.form-select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+button {
+    margin-bottom: 15px;
+    font-size: larger;
+    padding: 10px;
+    background-color: #F27127;
+    border: none;
+    color: white;
+    cursor: pointer;
+    border-radius: 10px;
+}
+
+button:hover {
+    background-color: #f27127b9;
+}
+
+/* Estilos adicionales */
+
+h1 {
+    font-size: 3em;
+    text-align: center;
+    margin-bottom: 10px;
+}
+.exito{
+    font-size: 15px;
+    color: rgb(158, 155, 155);
+    margin-bottom: 20px;
+}
+
+img {
+    margin-top: 100px;
+    max-width: 100%;
+    height: auto;
+}
+
+a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}

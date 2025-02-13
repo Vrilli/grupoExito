@@ -1,0 +1,72 @@
+<div *ngIf="loading">Cargando...</div>
+
+<div *ngIf="!loading">
+  <div class="container-nav">
+    <div class="nav">
+      <button [routerLink]="['/']">Volver</button>
+      <button (click)="cerrarSesion()">Cerrar sesión</button>
+    </div>
+  </div>
+
+  <h1>Agregar Tarjetas por Lotes</h1>
+
+  <div class="form">
+    <label class="block mt-2">Cantidad de tarjetas:</label>
+    <input 
+      type="number" 
+      [(ngModel)]="cantidadTarjetas" 
+      min="1" 
+      class="border p-2 rounded-md"
+      (change)="generarTarjetasIniciales()">
+  </div>
+
+  <form [formGroup]="batchForm" (ngSubmit)="enviarTarjetas()" class="container-form">
+    <div formArrayName="tarjetas">
+      <div *ngFor="let tarjeta of tarjetas?.controls; let i = index" [formGroupName]="i">
+        <div class="form-group">
+          <label>Número de Tarjeta:</label>
+          <input formControlName="numeroTarjeta" type="text" class="border p-2 rounded-md w-full" readonly>
+        </div>
+        <div class="form-group">
+          <label>Empresa:</label>
+          <input formControlName="company" type="text" class="border p-2 rounded-md w-full" placeholder="Nombre de la empresa" required>
+        </div>
+        <div class="form-group">
+          <label>Monto:</label>
+          <input formControlName="amount" type="number" class="border p-2 rounded-md w-full" placeholder="Monto" required>
+        </div>
+        <div class="form-group">
+          <label>Imagen URL:</label>
+          <input formControlName="imageUrl" type="text" class="border p-2 rounded-md w-full" placeholder="URL de la imagen" required>
+        </div>
+      </div>
+    </div>
+    
+    <div class="button-group">
+      <button type="button" (click)="agregarTarjeta()">Agregar</button>
+      <button type="submit">Guardar</button>
+      <button type="button" *ngFor="let tarjeta of tarjetas?.controls; let i = index" (click)="eliminarTarjeta(i)">Eliminar</button>
+    </div>
+  </form>
+</div>
+
+<!-- LISTADO DE LOTES GUARDADOS -->
+<div class="container-list" *ngIf="lotesGuardados?.length && lotesGuardados.length > 0">
+  <h2 class="title">Lotes Guardados</h2>
+  <div>
+    <div *ngFor="let lote of lotesGuardados; let i = index" class="gift-card">
+      <h3>Lote #{{ lote.id }} ({{ lote.fecha }})</h3>
+      <div *ngFor="let tarjeta of lote.tarjetas">
+        <p><strong>Número de Tarjeta:</strong> {{ tarjeta.numeroTarjeta }}</p>
+        <p><strong>Empresa:</strong> {{ tarjeta.company }}</p>
+        <p><strong>Monto:</strong> ${{ tarjeta.amount }}</p>
+        <img *ngIf="tarjeta.imageUrl" [src]="tarjeta.imageUrl" [alt]="'Imagen de la tarjeta ' + tarjeta.numeroTarjeta">
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Mensaje si no hay lotes guardados -->
+<div *ngIf="lotesGuardados?.length === 0" class="no-data">
+  <p>No hay lotes guardados.</p>
+</div>
