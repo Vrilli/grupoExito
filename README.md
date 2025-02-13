@@ -50,6 +50,8 @@ ng serve
 http://localhost:4200/
 
 ```
-Ahí podras visualizar la aplicación. 
+**Ahí podras visualizar la aplicación**
+
+Cuando la aplicación esté en ejecución, primero deberás registrarte. Una vez que el registro se complete con éxito, podrás acceder a la información.
 
 
