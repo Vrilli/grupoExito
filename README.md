@@ -1,27 +1,55 @@
-# GestionTarjetas
+# 🎴 Gestion Gift Card
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.0.6.
+Este es un proyecto de Gestión de Gift Cards, que permite a los usuarios crear, editar y eliminar tarjetas de regalo de manera sencilla.
 
-## Development server
+## Características principales:
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+**✅ Personalización completa:** Asigna un nombre a la empresa, define el monto a recargar e incluye una imagen representativa.
+**✅ Registro de movimientos:** Visualiza el historial de transacciones de cada Gift Card.
+**✅ Gestión por lotes:** Crea múltiples tarjetas en simultáneo y accede a su listado.
 
-## Code scaffolding
+Este sistema está diseñado para proporcionar una experiencia fluida, optimizando la gestión de tarjetas de regalo de manera rápida y segura. 🚀
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## 🚀 Tecnologías utilizadas
 
-## Build
+- **Angular CLI 18.0.6**
+- **TypeScript**
+- **Reactive Forms**
+- **CSS**
+- **Servicios y comunicación con API**
+- **Manejo de almacenamiento de datos (simulado)**
+- **Firebase, para realizar la autenticacion de usuarios**
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+---
 
-## Running unit tests
+## 🛠️ Instalación y configuración
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+### 🔹 Clonar el repositorio
 
-## Running end-to-end tests
+Para obtener el código fuente de este proyecto, usa el siguiente comando:
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+```sh
+git clone https://github.com/Vrilli/grupoExito.git
 
-## Further help
+```
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+Luego, accede al directorio del proyecto:
+
+cd grupoExito
+
+**Una vez allí, ejecuta el siguiente comando para instalar todas las dependencias necesarias:**
+
+npm install
+
+**Una vez instaladas las dependencias, inicia el servidor de desarrollo con:**
+
+ng serve
+
+**Luego, abre tu navegador y accede a:**
+```sh
+http://localhost:4200/
+
+```
+Ahí podras visualizar la aplicación. 
+
+
